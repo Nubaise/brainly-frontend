@@ -9,7 +9,7 @@ import { CreateContentModal } from './components/CreateContentModal'
 import { useState } from 'react'
 
 function App() {
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <div className="p-4">
@@ -17,7 +17,9 @@ function App() {
         setModalOpen(false);
       }}/>
       <div className="flex justify-end gap-4">
-        <Button variant="primary" startIcon={<PlusIcon />} text="Add content" />
+        <Button onClick={() => {
+          setModalOpen(true);
+        }} variant="primary" startIcon={<PlusIcon />} text="Add content" />
         <Button variant="secondary" startIcon={<ShareIcon />} text="Share brain" />
       </div>
       
