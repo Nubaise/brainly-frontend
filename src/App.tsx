@@ -1,13 +1,21 @@
 
 import { Button } from './components/Button'
+
 import { Card } from './components/Card'
 import { PlusIcon } from './icons/PlusIcon'
 import { ShareIcon } from './icons/Shareicon'
 
+import { CreateContentModal } from './components/CreateContentModal'
+import { useState } from 'react'
+
 function App() {
+  const [modalOpen, setModalOpen] = useState(true);
 
   return (
     <div className="p-4">
+      <CreateContentModal open={modalOpen} onClose={ () => {
+        setModalOpen(false);
+      }}/>
       <div className="flex justify-end gap-4">
         <Button variant="primary" startIcon={<PlusIcon />} text="Add content" />
         <Button variant="secondary" startIcon={<ShareIcon />} text="Share brain" />
