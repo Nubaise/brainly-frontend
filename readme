@@ -7,5 +7,9 @@ content: [
 "./src/**/*.{js,ts,jsx,tsx}",
 ],
 
-add backend:
+routing:
 npi i react-router-dom
+
+connecting to backend:
+we will now do it using first principles
+later using react-hook-forms,react-query,swr for data fetching
