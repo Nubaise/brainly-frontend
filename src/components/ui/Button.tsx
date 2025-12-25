@@ -1,35 +1,24 @@
-import type { ReactNode } from "react";
-
-type Variants = 'primary' | 'secondary';
+import type { ReactElement } from 'react';
 
 interface ButtonProps {
-    variant: Variants;
-    size: 'sm' | 'md' | 'lg';
+    variant: 'primary' | 'secondary';
     text: string;
-    startIcon?: ReactNode;
-    endIcon?: ReactNode;
-    onClick: () => void;
+    startIcon: ReactElement;
 }
 
-const variantStyles = {
-    "primary": "bg-purple-600 text-white",
-    "secondary": "bg-purple-300 text-purple-600",
-}   
+const variantClasses = {
+    primary: 'bg-blue-600 text-white',
+    secondary: 'bg-gray-200 text-purple-600',
+};
 
-const sizeStyles = {
-    "sm": "px-2 py-1",
-    "md": "px-4 py-2",
-    "lg": "px-8 py-4",
+const defaultStyles = "px-4 py-2 rounded-md font-light flex items-center gap-2";
+
+
+export function Button({ variant, text, startIcon }: ButtonProps) {
+    return (
+        <button className={`${variantClasses[variant]} ${defaultStyles}`}>
+            {startIcon}
+            {text}
+        </button>
+    );
 }
-
-const defaultStyles = "rounded-md flex";
-
-
-export const Button = (props: ButtonProps) => {
-    return <button className={`${variantStyles[props.variant]} ${defaultStyles} ${sizeStyles[props.size]}`}>
-        {props.startIcon ? <div className="pr-2">{props.startIcon}</div> : null} {props.text} {props.endIcon}
-    </button>;
-}
-
-
-<Button variant="primary" size="md" onClick={()=>{}} text={"asd"}/>
