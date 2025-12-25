@@ -6,3 +6,6 @@ content: [
 "./index.html",
 "./src/**/*.{js,ts,jsx,tsx}",
 ],
+
+add backend:
+npi i react-router-dom
