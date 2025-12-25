@@ -1,6 +1,7 @@
 import { Dashboard } from "./pages/dashboard";
-import { Signin } from "./pages/signin";
-import { Signup } from "./pages/signup";
+import { Signin } from "./pages/Signin";
+import { Signup } from "./pages/Signup";
+
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
